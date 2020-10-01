@@ -12,5 +12,5 @@ name = #This is a variable, allows for the storing and if desired editing of dat
 
 int() #This is a integer function, converts variables into integers using this function, stores whole numbers
 str() #This is a string function, converts variables into strings using this function, stores words / letters
-float() #This is a float function, converts variables into floats using this function, can store negatives and positives aswell as decimal places.
+float() #This is a float function, converts variables into floats using this function, can store negatives and positives aswell as decimal places
 ```
