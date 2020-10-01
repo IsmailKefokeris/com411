@@ -1,7 +1,7 @@
 # com411
 Work from Problem Solving Through Programming (COM411)
 
-Week 1: 
+# Week 1: 
 Revision of various python functions, variables, and operators.
 
 print() This is a print function, outputs the contents to the user
