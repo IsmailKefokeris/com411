@@ -31,4 +31,26 @@ else:
 #to find an odd number
 if (num % 2 != 0):
 
+#range
+#range generates a range of numbers
+# - start index (included)
+# - end index (Excluded)
+# - step difference (difference)
+#demonstration of a For loop
+for value in range(1, 10, 1):
+    print (value)
+#for loop
+for character in name:
+    print (character)
+#for loops go through a specific amount of steps or elements
+
+#nesting - putting one code block in another (for loop in an if statement, while inside a for)
+print ("please enter your name")
+name = input()
+
+if (len(name) < 6):
+    for character in name:
+        print (character)
+else:
+    print("you have a long name")
 ```
