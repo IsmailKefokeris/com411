@@ -14,3 +14,21 @@ int() #This is a integer function, converts variables into integers using this f
 str() #This is a string function, converts variables into strings using this function, stores words / letters
 float() #This is a float function, converts variables into floats using this function, can store negatives and positives aswell as decimal places
 ```
+## Week 2: 
+Revision of If statements, elif, else, while loops, modulo operators, 
+
+```python
+#simple python if and elif statements used
+num = input("Enter num: ")
+
+if (num > 5):
+    print("wow big num")
+elif (num != int):
+    print("well well well")
+else:
+    print("small")
+
+#to find an odd number
+if (num % 2 != 0):
+
+```
