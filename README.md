@@ -54,3 +54,41 @@ if (len(name) < 6):
 else:
     print("you have a long name")
 ```
+
+
+
+## Week 3
+
+```python
+#All the built in functions in PYTHON 
+abs()	
+delattr()	
+hash()	
+memoryview()	
+set()
+all()	
+dict()	
+help()	
+min()	
+setattr()
+any()	
+dir()	
+input()
+print()
+
+#and much much more
+```
+
+### Program to Calculate the Area of a triangle (Using/creating functions)
+
+```python
+
+def calculate_tri(base, height):
+
+    area = 0.5 * base * height
+    return area
+
+#calling the function
+calculate_tri(10, 5)
+
+```
