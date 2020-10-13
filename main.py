@@ -9,7 +9,18 @@ import basics.input.review as review
 import basics.input.string_operators as string_operators
 import basics.input.user_input as user_input
 
+import basics.repetitions.for_loop.simple as for_simple
+import basics.repetitions.while_loop.asciiwhile as asciiwhile
+import basics.repetitions.while_loop.count as count
+import basics.repetitions.while_loop.factorial as factorial
+import basics.repetitions.while_loop.len as lens
+import basics.repetitions.while_loop.simple as while_simple
+import basics.repetitions.while_loop.sum_100 as sum_100
+import basics.repetitions.while_loop.sum_user_numbers as sum_user_numbers
+
+
 from basics.functions.fun_calls import lower
+from basics.functions.fun_calls import upper
 
 def folder_sys():
     is_running = True
@@ -54,8 +65,6 @@ def folder_sys():
             print("")
             break
             print("")
-            
-
 
 
 def folder_input():
@@ -98,8 +107,86 @@ def folder_decisions():
 
 
 def folder_repetitions():
-    pass
+    is_running = True
 
+    while (is_running):
+        print ("Which folder would you like to enter: ")
+        print ("[A] Run 'Block A: Basics.repetitions.for_loop Programs")
+        print ("[B] Run 'Block A: Basics.repetitions.while_loop Programs")
+        print ("[Q] TO Go Back")
+        folder = lower(input())
+
+        if ("a" in folder):
+            is_running = True
+            while (is_running):
+                print ("Which program in Basics.repetitions.for_loop would you want to run? ")
+                print ("[A] Run 'Block A: Basics.repetitions.for_loop.simple.py Program")
+                print ("[Q] TO Go Back")
+                programselect = lower(input())
+
+                if ("a" in programselect):
+                    print("RUNNING....")
+                    print("")
+                    for_simple.run()
+                    print("")
+                elif ("q" in programselect):
+                    break
+
+        elif ("b" in folder):
+            is_running = True
+            while (is_running):
+                print ("Which program would you like to run: ")
+                print ("[A] Run 'Block A: Basics.repetitions.while_loop.asciiwhile.py Program")
+                print ("[B] Run 'Block A: Basics.repetitions.while_loop.count.py Program")
+                print ("[C] Run 'Block A: Basics.repetitions.while_loop.factorial.py Program")
+                print ("[D] Run 'Block A: Basics.repetitions.while_loop.len.py Program")
+                print ("[E] Run 'Block A: Basics.repetitions.while_loop.simple.py Program")
+                print ("[F] Run 'Block A: Basics.repetitions.while_loop.sum_100.py Program")
+                print ("[G] Run 'Block A: Basics.repetitions.while_loop.sum_user_numbers.py Program")
+                print ("[Q] TO Go Back")
+                programselect = lower(input())
+
+                if ("a" in programselect):
+                    print("RUNNING....")
+                    print("")
+                    asciiwhile.run()
+                    print("")
+                elif ("b" in programselect):
+                    print("RUNNING....")
+                    print("")
+                    count.run()
+                    print("")    
+                elif ("c" in programselect):
+                    print("RUNNING....")
+                    print("")
+                    factorial.run()
+                    print("")   
+                elif ("d" in programselect):
+                    print("RUNNING....")
+                    print("")
+                    lens.run()
+                    print("") 
+                elif ("e" in programselect):
+                    print("RUNNING....")
+                    print("")
+                    while_simple.run()
+                    print("")
+                elif ("f" in programselect):
+                    print("RUNNING....")
+                    print("")
+                    sum_100.run()
+                    print("")
+                elif ("g" in programselect):
+                    print("RUNNING....")
+                    print("")
+                    sum_user_numbers.run()
+                    print("")
+                elif ("q" in programselect):
+                    break
+
+        elif ("q" in folder):
+            break
+                
 
 def folder_output():
 

@@ -1,12 +1,12 @@
+def run():
+    print ("How many bars should be charged?")
+    charge = int(input())
 
-print ("How many bars should be charged?")
-charge = int(input())
+    bars = 0
 
-bars = 0
+    while (bars != charge):
+        print ("Charging", end = "")
+        bars += 1
+        print (" ❂" * bars)
 
-while (bars != charge):
-    print ("Charging", end = "")
-    bars += 1
-    print (" ❂" * bars)
-
-print ("The battery is fully charged")
+    print ("The battery is fully charged")
