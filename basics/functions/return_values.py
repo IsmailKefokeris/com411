@@ -24,5 +24,4 @@ def run():
     else:
         print ("ERRORRRR.... ENTER either Sum or Average.....")
 
-run()
 

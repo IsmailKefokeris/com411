@@ -10,3 +10,6 @@ def ass_char():
         return char
     else:
         print (".....PRogram ENDed")
+
+def run():
+    ass_char()

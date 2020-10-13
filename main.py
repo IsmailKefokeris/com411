@@ -18,6 +18,17 @@ import basics.repetitions.while_loop.simple as while_simple
 import basics.repetitions.while_loop.sum_100 as sum_100
 import basics.repetitions.while_loop.sum_user_numbers as sum_user_numbers
 
+import basics.functions.ascii_character as ascii_character
+import basics.functions.ascii_code as ascii_code
+import basics.functions.fun_calls as fun_calls
+import basics.functions.fun_parameters as fun_parameters
+import basics.functions.function_loop as function_loop
+import basics.functions.function_with_nesting as function_with_nesting
+import basics.functions.functions_with_parameter as function_with_parameter
+import basics.functions.multiple_functions as multiple_functions
+import basics.functions.return_values as return_values
+import basics.functions.simple_functions as simple_functions
+
 
 from basics.functions.fun_calls import lower
 from basics.functions.fun_calls import upper
@@ -99,8 +110,74 @@ def folder_input():
 
 
 def folder_functions():
-    pass
+    is_running = True
+    while (is_running):
+        print ("Which program would you like to run: ")
+        print ("[A] Run 'Block A: Basics.functions.ascii_character.py Program")
+        print ("[B] Run 'Block A: Basics.functions.ascii_code.py Program")
+        print ("[C] Run 'Block A: Basics.functions.fun_calls.py Program")
+        print ("[D] Run 'Block A: Basics.functions.fun_parameters.py Program")
+        print ("[E] Run 'Block A: Basics.functions.function_loop.py Program")
+        print ("[F] Run 'Block A: Basics.functions.function_with_nesting.py Program")
+        print ("[G] Run 'Block A: Basics.functions.function_with_parameter.py Program")
+        print ("[H] Run 'Block A: Basics.functions.multiple_functions.py Program")
+        print ("[I] Run 'Block A: Basics.functions.return_values.py Program")
+        print ("[J] Run 'Block A: Basics.functions.simple_functions.py Program")
+        print ("[Q] TO Go Back")
+        programselect = lower(input())
 
+        if ("a" in programselect):
+            print("RUNNING....")
+            print("")
+            ascii_character.run()
+            print("")
+        elif ("b" in programselect):
+            print("RUNNING....")
+            print("")
+            ascii_code.run()
+            print("")
+        elif ("c" in programselect):
+            print("RUNNING....")
+            print("")
+            fun_calls.run()
+            print("")
+        elif ("d" in programselect):
+            print("RUNNING....")
+            print("")
+            fun_parameters.run()
+            print("")
+        elif ("e" in programselect):
+            print("RUNNING....")
+            print("")
+            function_loop.run()
+            print("")
+        elif ("f" in programselect):
+            print("RUNNING....")
+            print("")
+            function_with_nesting.run()
+            print("")
+        elif ("g" in programselect):
+            print("RUNNING....")
+            print("")
+            function_with_parameter.run()
+            print("")
+        elif ("h" in programselect):
+            print("RUNNING....")
+            print("")
+            multiple_functions.run()
+            print("")
+        elif ("i" in programselect):
+            print("RUNNING....")
+            print("")
+            return_values.run()
+            print("")
+        elif ("j" in programselect):
+            print("RUNNING....")
+            print("")
+            simple_functions.run()
+            print("")
+        elif ("q" in programselect):
+            break
 
 def folder_decisions():
     pass

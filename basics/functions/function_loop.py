@@ -13,3 +13,6 @@ def cross_bridge(steps):
         print ("We must keep going!")
 
 
+def run():
+    step = int(input("Enter the amount of steps "))
+    cross_bridge(step)

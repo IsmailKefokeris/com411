@@ -10,3 +10,7 @@ def ass_calculate():
         return ass
     else:
         print ("ONE CHARACTER OR LETTER ONLY.....PRogram ENDed")
+
+
+def run():
+    ass_calculate()

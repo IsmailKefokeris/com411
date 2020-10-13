@@ -8,4 +8,5 @@ def identify():
     else:
         print ("ahh we should be A O K")
 
-identify()
+def run():
+    identify()

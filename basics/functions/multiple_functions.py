@@ -16,5 +16,6 @@ def create_ladder():
     return display_ladder(ladderStep)
 
 
-create_ladder()
+def run():
+    create_ladder()
 

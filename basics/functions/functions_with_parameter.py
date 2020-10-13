@@ -9,3 +9,8 @@ def escape_by(plan):
         print ("That might just work woopity poo... LEts go Deeper")
     else:
         print ("HELL NAH I AINT TRYING THAT YOU STOOOPID??!?!?!?!?")
+
+
+def run():
+    plan = input("What is your escape plan? ")
+    escape_by(plan)
