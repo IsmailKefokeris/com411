@@ -1,27 +1,27 @@
+def run():
+    #Robot Default Face
 
-#Robot Default Face
+    print(" ########## ")
+    print(" #  -  -  # ")
+    print(" #  ----  # ")
+    print(" ########## ")
 
-print(" ########## ")
-print(" #  -  -  # ")
-print(" #  ----  # ")
-print(" ########## ")
+    print ("I am feeling at ease, what should my new eyes be?")
 
-print ("I am feeling at ease, what should my new eyes be?")
+    eyes = input()
 
-eyes = input()
+    print ("Brilliant!!")
 
-print ("Brilliant!!")
+    #tried using format but cant really get it to work with the ascii art correctly
+    print(" ########## ")
+    print(" # {}  {} # ".format(eyes,eyes))
+    print(" #  ----  # ")
+    print(" ########## ")
 
-#tried using format but cant really get it to work with the ascii art correctly
-print(" ########## ")
-print(" # {}  {} # ".format(eyes,eyes))
-print(" #  ----  # ")
-print(" ########## ")
-
-#just manually entering it and adjusting it seems to have worked better for now
-print(" ########## ")
-print(" # ", eyes,"", eyes,  " # ")
-print(" #  ----  # ")
-print(" ########## ")
+    #just manually entering it and adjusting it seems to have worked better for now
+    print(" ########## ")
+    print(" # ", eyes,"", eyes,  " # ")
+    print(" #  ----  # ")
+    print(" ########## ")
 
 
