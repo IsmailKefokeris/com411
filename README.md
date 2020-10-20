@@ -129,4 +129,27 @@ set - Is an unordered collection of data (means when you put something into a se
 Dictionary - Dictionaries are dynamic (does grow and shrink) but is also unordered (meaning you will have the key but you wont know where the value is. Each key in the dictionary is unique the dictionary will hash it and will figure out how to map it )
 
 
+### Tuple/List Example
 
+```python
+person = ("Ismail", 19) # tuple
+
+person2 = ["Ismail", 19] # List
+
+print(type(person)) #prints out the data type(Tuple)
+
+print (person + (22, 45)) #tuples cant be changed but we have 2 tuples and it will create a brand new tuple and add all the items together.
+
+#repition in a tuple
+
+personlots = person * 4
+
+print(personlots) # You can multiply tuples (repitition)
+
+#Min and Max in a tuple
+
+temp = (12,13,15,23)
+
+print (min(temperatures))
+print (max(temperatures))
+```
