@@ -24,14 +24,13 @@ def menu():
 
 def run():
     route = []
-    
+
     print ("Working out escape route....")
 
-    for count in range(5):
+    for _count in range(5):
         slct = menu()
         direct = directions()
         route.append(direct[slct])
 
     print ("Escape Route: {}".format(route))
     
-run()
