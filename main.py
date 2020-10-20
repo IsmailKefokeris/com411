@@ -75,7 +75,6 @@ def folder_sys():
             print("RUNNING....")
             print("")
             break
-            print("")
 
 
 def folder_input():
