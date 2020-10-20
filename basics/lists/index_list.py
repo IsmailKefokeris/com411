@@ -21,4 +21,3 @@ def run():
         step += 2
         count += 2
 
-run()
