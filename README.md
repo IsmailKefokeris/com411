@@ -153,3 +153,86 @@ temp = (12,13,15,23)
 print (min(temperatures))
 print (max(temperatures))
 ```
+
+## Week 5
+
+sets, In python a set is equivalent to mathematics..but in terms of programming.. a set is a collection of distinct object (no duplicates..Unique). may be defined by membership rule or by listing its members. Sets are unordered which contains immutable objects(The items in  the set cannot be changed) but the set itself can be mutable (but the set itself can be changed) or immutable ...Frozen sets
+
+Creating an example set:
+
+```python
+wedding = {"cake", "old", "new", "blue", "borrowed"} #Creates a set with some pre defined values... 
+
+items = ("Guests", "witnesses") #Creates a set with another data structure..Has to be a tuple because sets must contain immutable objects! (LISTS ARE NOT)
+wedding = {items}
+
+```
+
+Function:	                                                            Description:
+
+len(s)	                                              The number of elements in set s (known as cardinality of s).
+
+x in s --------------------------------------------	  Test x is a member of set s.
+
+x not in s	                                          Test x is not a member of set s.
+
+s.add(el) ------------------------------------------- Adds the element el to the set s.
+
+s.discard(el)                                         Removes the element el from the set s if it is contained in the set s. If not, nothing will happen.
+
+s.remove(el) --------------------------------------	  Removes the element el from the set s if it is contained in the set s. If not, a KeyError will occur.
+
+s.issubeset(t)	----------------------------------------- Test whether every element of set s is in set t.
+[Equivalent to s <= t]
+
+s.issuperset(t)	----------------------------------------- Test whether every element of set t is in set s.
+[Equivalent to s >= t]
+
+s.union(t) -----------------------------------------	Creates a new set with elements from both set s and set t.
+[Equivalent to s | t]
+
+s.intersection(t) -----------------------------------------	Creates a new set with elements that are common to both set s and set t.
+[Equivalent to s & t]
+
+s.difference(t) -----------------------------------------	Creates a new set with elements that in set s but not in set t.
+[Equivalent to s - t]
+
+s.symmetric_difference(t) -----------------------------------------	Creates a new set with elements in either set s or set t but not both.
+[Equivalent to s ^ t]
+
+s.copy() -----------------------------------------	Creates a new set with a shallow copy of set s.
+
+del s -----------------------------------------	Deletes the set s.
+
+------------------------------------------------------------------------------------------------------------------------------------------------
+
+### Dictionary
+
+Dictionaries are dynamic, unordered and mutable collections of data. Dictionaries use hashing to determine how an item will be stored... Keys are unique in a dictionary and are used by hashing algorithms which will generate a hash value.
+
+Creating an example Dictionary:
+
+```python
+
+wedding = {} #creates a dictionary (because the curly brackets are empty)
+
+wedding["guests"] = 6  #stores the value 6 under the key guests. (adding an item)
+
+wedding["guestsNames"] = ("john", "Amigoo", "peter")  #stores the guest names. (adding an item)
+
+
+```
+
+
+Function:	                                                            Description:
+
+len(d)	                                                    The number of elements in dictionary d.
+x in d		                                                Test x is a key of dicitonary d.
+d["k"] = v		                                            Adds the value v using key k to the dicitonary d.
+d.pop(k)		                                            Removes the value with key k from the dictionary d.
+d.popitem()		                                            Removes the last inserted item (or random item in older versions of Python) from the dictionary d.
+d.clear()		                                            Removes all key-values stored in the dictionary d.
+d.items()		                                            Returns the key-value pairs stored in the dictionary d.
+d.values()		                                            Returns all the values stored in the dictionary d.
+d.copy()		                                            Creates a new dictionary with a shallow copy of dictionary d.
+del d		                                                Deletes the dictionary d.
