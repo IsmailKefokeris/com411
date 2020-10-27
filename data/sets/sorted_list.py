@@ -3,7 +3,7 @@ def observed():
     observations = []
 
     for count in range(5):
-        sees = input("What observation? ")
+        sees = input("What is observation {}? ".format(count))
         observations.append(sees)
 
     return observations
