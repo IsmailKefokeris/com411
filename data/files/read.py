@@ -5,12 +5,12 @@ def search(Fname):
 
     with open(Fname, "r") as file:
         for line in file:
-            print (f"Looked in The {line}")
+            print (f"Looked in The {line}", end="")
     
-    print ("Done!....")
+    print ("\nDone!....")
 
 
 def run():
-    search("read.txt")
+    search("data/files/locations.txt")
 
 run()
