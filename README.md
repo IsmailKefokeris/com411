@@ -236,3 +236,203 @@ d.items()		                                            Returns the key-value pai
 d.values()		                                            Returns all the values stored in the dictionary d.
 d.copy()		                                            Creates a new dictionary with a shallow copy of dictionary d.
 del d		                                                Deletes the dictionary d.
+
+
+## Week 6
+
+Data, Computer file is the most  basic unit to store data on a computer.
+Multiple computer files can be grouped together into folders or otherwise known as directories.... A computer folder is essentially a container for computer files and may also contain other folders
+
+#### File Paths and the Current Working Folder
+
+The current working folder is the folder were the program is actually running.... There are two ways to access a file, an absolute path which is a location in the file system regardless of current working folder.... or a relative path which starts from the current working efolder which avoids the need for an absolute path.
+
+#### File Formats
+
+There are various different types of information files...for instance .txt, .csv, .json, .png, etc...
+
+##### .txt
+
+unformatted text
+
+sample.txt
+--------------------------
+This is a text file with some sample data.
+
+##### .csv
+
+csv... stands for comma separated values..indicates how the text is stored in the file and often represents data from spreadsheets or databases...The first row often is the header....
+
+movies.csv
+--------------------------
+Film,Genre,Year
+Tangled,Animation,2010
+Gnomeo and Juliet,Animation,2011
+WALL-E,Animation,2008
+
+##### .Json
+
+Json...or otherwise known as a javascript object notation.... is an independent text based interchange format....files with this format will use .json extension and are used to exchanged data between web application and a server.
+
+These files may contain simple data structures(dictionaries) that can be processed efficiently and flexibily....
+
+songs.json
+--------------------------
+[
+  {
+    "song_id": "1",
+    "song_title": "Zombie",
+    "artist_id": "14",
+    "album_id": 1,
+    "duration": 301.123,
+    "year": "1994"
+  },
+  {
+    "song_id": "2",
+    "song_title": "In The End",
+    "artist_id": "35",
+    "album_id": 9,
+    "duration": 271.405,
+    "year": 2002
+  }
+]
+
+
+
+#### Python Modules
+
+Python treats files as one of two categories - either as text files or binary files:
+
+A text file is a file that contains data stored using a text-based format.  Text files can be plain (i.e. contain no formatting) or contain text with formatting.  Some examples of plain text files include files with the extensions .txt, .csv and .json.  Some examples of text files that contain formatting include .docx and .xls. 
+
+A binary file is a file that contains data stored using a format other than a text-based format.  For example, audio, video and image files are binary files and can be processed as such by Python.
+
+#### Programming python TXT Files
+
+The key function in python is "open" which takes two parameters....file name and mode
+
+Modes:
+
+    Read: default mode and we would specify it using "r"
+
+    append: Specified using "a" this will open a file for appending...if the file doesnt exist python will create it.
+
+    write: specified by using "w" this will open a file in write mode...if the file doesnt exist python will create it.
+
+    create: specified by using "x" In this mode, the file is created....If the file already exists then an error will be generated.
+
+Additionally files can be opened as a text file("b"...doesnt need specification because its the default) or a binary file ("b" does need specification)
+
+For example, if we wish to open an existing text file for reading we can use any of the following:
+```python
+
+    file = open("data.txt", "rt")
+
+    #or, as text file is the default type of file, we have:
+
+    file = open("data.txt", "r")
+
+    #or, as read is also the default mode, we have:
+
+    file = open("data.txt")
+
+    #Similarly, if we wish to create and write to a new binary file, we can do the following:
+
+    file = open("output.png", "wb")
+```
+WHENEVER YOU OPEN A FILE YOU MUST CLOSE IT AFTERWARDS
+
+
+#### Programming python CSV Files
+
+When working with csv in python we import something called csv (a module) which makes it simpler to handle csv files in python.
+
+For example, if we wish to open a CSV file for reading and display the first column of each row then we can do the following:
+
+```python
+
+import csv
+
+with open("data.csv") as csvfile:
+    # This is the reader which will read the csv file
+    csv_reader = csv.reader(csvfile, delimiter=',', quotechar='"')
+    # This gets each row in the csv file 
+    for row in csv_reader:
+        print(row[0])
+
+```
+
+Best to use with simply because it avoids having to close the same file after you are done and avoid you forgetting.
+
+
+#### Programming python JSON Files
+
+Again with Json we need to use a module to help process json...we have a module called json which we can use to help.
+
+```python
+import json
+
+with open("data.json") as json_file:
+  data = json.load(json_file)
+
+print(data)
+
+```
+
+sometimes its useful to generate json...you can use functions such as dump...
+
+```python
+import json
+
+# a dictionary...
+json_data = {
+    "name": "Prins",
+    "job": "Lecturer"
+}
+
+# opening the file in write mode
+json_file = open("output.json", "w")
+# calls the dump function to write into the file
+json.dump(json_data, json_file, indent = 4)
+
+json_file.close()
+
+```
+Alternatively, the methods "loads" and "dumps" can be used when working with strings rather than files.
+THEY HAVE AN "S" at the end to identify them
+
+#### Python and Remote Files
+
+We could use the request module allowing me to communicate with a web server..
+
+We can get data (e.g. a JSON file) from a server using the method get:
+
+```python
+import requests
+
+response = requests.get("https://somesite.com/data.json")
+print(response.json())
+
+```
+
+We can send data (e.g. JSON) to a server using the method post:
+
+```python
+import json
+import requests
+
+data = {
+    "name": "Prins",
+    "job": "Lecturer"
+}
+
+json_data = json.dumps(data)
+requests.post("https://somesite.com/post", json=json_data)
+
+```
+
+
+
+
+
+
