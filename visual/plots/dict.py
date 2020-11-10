@@ -35,7 +35,7 @@ def generate():
     wayX = [1, 5, 7,8,10,15] 
     wayY = [1, 6, 4,7,9,14] 
     
-    for count in range(amount):
+    for _ in range(amount):
         info = data()
         plt.plot(wayX,wayY, info["colour"] + info["mark"] + info["line"])
         plt.show()
