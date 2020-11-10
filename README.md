@@ -432,7 +432,90 @@ requests.post("https://somesite.com/post", json=json_data)
 ```
 
 
+## Week 7
+
+Data Visualisation... Data visualisation is used to represent different types of information..It is going to be used for us to help solve real world problems, we want to represent relationsips and correlations between data sets and privdes a mean by which we understand trends. Visualisations is crucial to organisations allowing them to find patterns in user data and make important choices.
 
 
+### Visulasing data with PYthon
 
+Matplotlib..Library for python to create plots and graphs using python scripts..it can use a wide range of graphics and has dedicated plotting module named pyplot which can simplify the process of creating plots and graphs.
 
+in convention the module pyplot is imported as "plt"  because the name is so long
+
+```python
+import matplotlib.pyplot as plt
+```
+
+Some commonly used functions are:
+
+    .plot - Takes two parameters.. A list or values representing points on X and Y... itll draw them
+
+        ```python
+        import matplotlib.pyplot as plt
+
+        x = [0,2,4,6,8,10]
+        y = [0,20,40,60,80,100]
+
+        plt.xlabel("x values")
+        plt.ylabel("y values")
+
+        plt.plot(x, y)
+        plt.show()
+        Pyplot Line
+        import matplotlib.pyplot as plt
+
+        x = [0,2,4,6,8,10]
+        y = [0,20,40,60,80,100]
+
+        plt.xlabel("x values")
+        plt.ylabel("y values")
+
+        plt.plot(x, y, "o")
+        plt.show()
+        ```
+
+    .step - Similar to plot function but used to create a step plot
+
+        ```python
+        import matplotlib.pyplot as plt
+
+        x = [0,2,4,6,8,10]
+        y = [0,20,40,60,80,100]
+
+        plt.xlabel("x values")
+        plt.ylabel("y values")
+
+        plt.step(x, y)
+        plt.show()    
+
+        ```
+    
+    .bar - Creates a Bar graph
+
+        ```python
+        import matplotlib.pyplot as plt
+
+        x = [0,2,4,6,8,10]
+        y = [0,20,40,60,80,100]
+
+        plt.xlabel("x values")
+        plt.ylabel("y values")
+
+        plt.bar(x, y)
+        plt.show()
+        ```
+    
+    .pie - Creates a pie chart
+
+        ```python
+        
+        import matplotlib.pyplot as plt
+
+        labels = ('A', 'B', 'C', 'D')
+        sizes = [15, 30, 45, 10]
+
+        plt.pie(sizes, labels=labels)
+        plt.show()
+
+        ```
