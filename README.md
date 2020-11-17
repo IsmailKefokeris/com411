@@ -519,3 +519,113 @@ Some commonly used functions are:
         plt.show()
 
         ```
+
+
+
+#### Week 8
+
+
+###### Subplots with matplotlib...
+
+Looking at data in different ways we can get different insights to the data...for instance data related to time there would be different techniques to visualise that..it also helps to compare things by seeing them next to each other..Using matplotlib we will be able to combine and create a number of charts or plots int o a single graphic (known as a "Figure")...The entire chart or graphic....A figure can consist of 0 or more axis with many subplots represented in a different way depending what we are drawing....
+
+In Matplotlib figures contain:
+
+![Matplotlib Figure Anatomy....Prins Butt](pictures/matplotlib.png)
+
+
+Figure - A figure is a top level container for all plots and graphics...A figure is able to contain any number of Axes("Plots") and is able to be set to control the space between Axes...To be useful a figure must have atleast one Axes...
+
+Creating a figure we would use the method ".figure()" which is from matplotlib.pyplot.... Once we have the figure it can be populated with plots ("AXES") as needed... we can also use the ".subplots" method to create subplots and with this method we are able to populate a figure with the number of Axes and arrange them into a grid of rows and columns...alternatively we are also able to use the method ".add_subplot" of a figure to add an individual subplot... into a 2 by 2 grid and if the current subplot is the 3rd it would use the values 2,2,3 to add a subplot to the appropriate location....
+
+```python
+
+import matplotlib.pyplot as plt
+
+fig, axs = plt.subplots(2, 2)
+
+or
+
+import matplotlib as plt
+
+fig, (ax1, ax2, ax3, ax4) = plt.subplots(2, 2)
+
+or
+
+import matplotlib as plt
+
+fig = plt.figure()
+ax = fig.add_subplot(2, 2, 1)
+
+```
+
+Axes - Axes represent a "plot" or "subplot" in a specific figure...they contain 2 or 3 Axis (2D or 3D plots)...Axes contains most of the elements taht make up a plot (Axis, Ticks, Lines, Text, etc)
+
+```python
+
+import matplotlib.pyplot as plt
+
+fig, axes = plt.subplots(2, 2)
+x = range(0, 10, 1)
+y = range(0, 20, 2)
+axes[0,0].plot(x, y)
+axes[1,1].plot(x, y)
+
+```
+
+Axis - The axis controls the limits of a plot and are represented by number line like objects in a plot....axis consist of ticks and tick labels...We can use the axis to control what ticks and labels are shown on screen....When adding ticks and labels it is often useful to call plt.tight_layout() to layout the plots neatly and ensure no overlapping...
+
+```python 
+
+import matplotlib.pyplot as plt
+import matplotlib.pyplot as plt
+
+fig, axes = plt.subplots(2, 2)
+
+x = range(0, 10, 1)
+y = range(0, 20, 2)
+
+axes[0,0].plot(x, y)
+axes[0,0].set_xlabel('X')
+axes[0,0].set_xlim(2, 8)
+axes[0,0].set_ylabel('Y')
+axes[0,0].set_ylim(4, 16)
+
+plt.tight_layout()
+
+```
+
+Ticks - Ticks are represented on the axis and can either be major or minor (they are the numbers across an axis (XYZ)) A Major as shown in the diagram above is a longer thicker tick compared to its minor counterpart...by default minors are not visible on the axis ...mahor ticks represent the key points along an axis...Both major and minor ticks are controlled using tick parameters allowing their appearance and formatting to be manipulated....we can also specify the position of the ticks by supplying a list of values or generating these using "multipleLocator"...
+
+```python
+
+import matplotlib.pyplot as plt
+from matplotlib.ticker import MultipleLocator
+
+fig, axs = plt.subplots(2, 2)
+
+x = range(0, 10, 1)
+y = range(0, 20, 2)
+
+axs[0,0].plot(x, y)
+
+axs[0,0].set_xlabel('X')
+axs[0,0].set_xlim(2, 8)
+
+axs[0,0].set_ylabel('Y')
+axs[0,0].set_ylim(4, 16)
+
+axs[0,0].tick_params(which='both', width = 2)
+axs[0,0].tick_params(which='major', length = 8)
+axs[0,0].tick_params(which='minor', length = 4, color = 'r')
+
+axs[0,0].xaxis.set_minor_locator(MultipleLocator(1))
+axs[0,0].yaxis.set_minor_locator(MultipleLocator(2))
+axs[0,0].xaxis.set_major_locator(MultipleLocator(2))
+axs[0,0].yaxis.set_major_locator(MultipleLocator(4))
+
+plt.tight_layout()
+
+```
+
+
