@@ -595,7 +595,7 @@ plt.tight_layout()
 
 ```
 
-Ticks - Ticks are represented on the axis and can either be major or minor (they are the numbers across an axis (XYZ)) A Major as shown in the diagram above is a longer thicker tick compared to its minor counterpart...by default minors are not visible on the axis ...mahor ticks represent the key points along an axis...Both major and minor ticks are controlled using tick parameters allowing their appearance and formatting to be manipulated....we can also specify the position of the ticks by supplying a list of values or generating these using "multipleLocator"...
+Ticks - Ticks are represented on the axis and can either be major or minor (they are the numbers across an axis (XYZ)) A Major as shown in the diagram above is a longer thicker tick compared to its minor counterpart...by default minors are not visible on the axis ...major ticks represent the key points along an axis...Both major and minor ticks are controlled using tick parameters allowing their appearance and formatting to be manipulated....we can also specify the position of the ticks by supplying a list of values or generating these using "multipleLocator"...
 
 ```python
 
@@ -625,7 +625,7 @@ axs[0,0].xaxis.set_major_locator(MultipleLocator(2))
 axs[0,0].yaxis.set_major_locator(MultipleLocator(4))
 
 plt.tight_layout()
-
+plt.show()
 ```
 
 
