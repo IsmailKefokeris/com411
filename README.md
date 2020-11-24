@@ -628,4 +628,60 @@ plt.tight_layout()
 plt.show()
 ```
 
+#### Week 9 - Animations
+
+Animation: System generated timed event
+
+Events: something system or user initated
+
+Basic Animation Loop.....
+
+```python
+import matplotlib.pyplot as plt
+import matplotlib.animation as animation
+
+fig, ax = plt.subplots()
+
+def animate(frame):
+  ax.cla() # clears axis
+  ax.set_xlim(0,10)
+  ax.set_ylim(0,10)
+  ax.plot(frame, frame, "ro")
+
+def run():
+  simp_animation = animation.FuncAnimation(fig, animate, frames = 10, interval = 1000)
+
+  plt.show()
+
+run()
+```
+Adding Init function and numpy to create a box and other techniques
+
+```python
+import matplotlib.pyplot as plt
+import matplotlib.animation as animation
+import numpy as np
+data = None
+fig, ax = plt.subplots()
+
+def init():
+    global data
+    data = {
+        "x":np.array[3,3, 4,4,3], 
+        "y":np.array[3,4, 4,3,3]
+    }
+
+def animate(frame):
+    ax.cla() # clears axis
+    ax.set_xlim(0,10)
+    ax.set_ylim(0,10)
+    ax.plot(frame + data["x"], data["y"], "ro")
+
+def run():
+    simp_animation = animation.FuncAnimation(fig, animate, frames = 10, interval = 1000, init_func=init)
+
+    plt.show()
+
+run()
+```
 
