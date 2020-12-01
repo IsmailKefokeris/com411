@@ -13,10 +13,27 @@ class robot():
         # An instance attribute
         self.name = "Robot"
         self.age = 0
+        self.energy = 100
 
     # An instance method
     def display(self):
         print(f"I am {self.name}")
+    
+    def grow(self):
+        self.age += 1
+    
+    def eat(self,eat):
+        
+        if (self.energy + eat) > 100:
+            print("Unable to eat too much energy")
+        else:
+            self.energy = self.energy + eat
+
+    def move(self, distance):
+        if self.energy > distance:
+            self.energy = self.energy - distance
+        else:
+            print ("Not enough Energy...eat something")
     
     def __repr__(self):
         return f'robot(name={self.name}, age={self.age})'
