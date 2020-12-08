@@ -685,3 +685,85 @@ def run():
 run()
 ```
 
+#### Week 11 - Inheritance
+
+A class is like a blue print, they are used to create objects.
+
+Other classes can inherite other classes. This reduces repitition by reusing existing code.
+
+```python
+from abc import ABC, abstractmethod
+
+class Animal(ABC): # abstract based class, TUrns Animal into an abstract class (objects can not be created of it) 
+#abstract classes can contain both abstract and concrete methods 
+
+    def __init__(self):
+        self.energy = 100
+
+    def move(self, distance):
+        self.energy -= distance
+    
+    @abstractmethod #declares speak method as abstract and because of this the class animal is now abstract.
+    #abstract method will leave the responsibility of completing a method to the inheriting class
+    def speak(self):
+        pass
+
+class Dog(Animal):
+
+    def __init__(self):
+        #still needs to create an init to have a dog object
+        #dog is a sub class (Child class), Animal is a superclass (parnet class)
+        super().__init__() #super means the parent (superclass) of dog (Animal) -- this line tells Animal to initialises
+        #super() allows you to call methods and attributes from the parent class
+        self.sound = "Woof"
+    
+    def speak(self):
+        print (self.sound) # this over rights the parent class (superclass) 
+    
+    
+
+class Cat(Animal):
+
+    def __init__(self):
+        #still needs to create an init to have a cat object
+        #cat is a sub class, Animal is a superclass
+        super().__init__()
+        self.sound = "Meow"
+
+    def speak(self):
+        print (self.sound) # 
+```
+
+
+![Inheritance Diagram....Prins Butt](https://learn.solent.ac.uk/pluginfile.php/2472690/mod_page/content/82/universe.png?time=1607411043291)
+
+
+1. Class name (Human, Robot, etc)
+2. Attributes (Name and data type of the attribute, Color, etc)
+3. Methods (The name of the method, the parameters and their data type and return type, activate():None)
+4. Abstract (Dont want to create an object in itself)
+
+Arrows:
+    1. Has / Uses (Shown with dashed line arrows and indicates one class has one or more objects of another class)
+    2. Is / Extends (Shown with Solid line arrows and indicates that one class is a special type of another class)
+
+Careful with inheriting from too many classes, there is a diamond problem where you may end up in a lock....
+
+
+```python
+
+animals = []
+
+animals.append(Dog())
+animals.append(cat())
+
+#to check what type of animal (instance) it is so we know what we are working with...
+for animal in animals:
+    if isinstance(animal,Dog):
+        print ("I have a dog")
+
+```
+
+
+
+

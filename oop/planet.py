@@ -51,8 +51,15 @@ class Universe():
             planet.add_robot(str(random.randrange(1,500)))
 
         self.planets.append(planet)
+        print(self.planets[0])
+        
+    
+    def show_populations(self):
+        pass
 
 
+uni = Universe()
+uni.generate()
 
 
 """
