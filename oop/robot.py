@@ -5,8 +5,9 @@ class Robot(Inhabitant):
 
     LAWS = "Protect, Obey and Survive"
 
-    def __init__(self):
+    def __init__(self, name):
         super().__init__()
+        self.name = name
 
     def the_laws(self):
         print(Robot.LAWS)
@@ -19,11 +20,11 @@ class Robot(Inhabitant):
         return f'My name is {self.name} and I am {self.age} years old.'
     
     def __repr__(self):
-        return f'Robot(name={self.name}, age={self.age})'
+        return f'(name={self.name}, age={self.age})'
 
 
 if __name__ == "__main__":
-    robot = Robot()
+    robot = Robot("robot")
     robot.the_laws()
     robot.move()
     print(repr(robot))

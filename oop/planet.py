@@ -1,65 +1,64 @@
-import human as human_bot
+from human import Human
+from robot import Robot
 import random
 
 class Planet():
 
     def __init__(self):
-        self.species = {
-            "humans": [],
-            "robots": []
-        } 
+        self.inhabitants = []
     
     def add_human(self, num):
         name = "human" + num
-        self.species["humans"].append(name)
+        human = Human(name)
+        self.inhabitants.append(human)
 
     def remove_human(self):
-        if len(self.species["humans"]) > 0:
-            name = str(input("Name: "))
-            self.species["humans"].remove(name)
-        else:
-            print("no Humans available to remove")
+        remove = False
+        for species in self.inhabitants:
+            if isinstance(species,Human) and remove == False:
+                self.inhabitants.remove(species)
+                remove = True
+        if remove == False:
+            print ("No Humans to be removed!!")
 
     def add_robot(self, num):
-        robot = "robot" + num
-        self.species["robots"].append(robot)
+        name = "robot" + num
+        robot = Robot(name)
+        self.inhabitants.append(robot)
     
     def remove_robot(self):
-        if len(self.species["robots"]) > 0:
-            robot = str(input("Name: "))
-            self.species["robots"].remove(robot)
-        else:
-            print("no robots available to remove")
-        
+        remove = False
+        for species in self.inhabitants:
+            if isinstance(species,Robot) and remove == False:
+                self.inhabitants.remove(species)
+                remove = True
+        if remove == False:
+            print ("No robots to be removed!!")
+
     def __repr__(self):
-        return "humans {} and Robots {}".format(self.species["humans"], self.species["robots"])
+        robot = 0
+        human = 0
+        for species in self.inhabitants:
+            if isinstance(species,Human):
+                human += 1
+            else:
+                robot += 1
+
+        return f"There are a total of {human} Humans and a total of {robot} Robots on this planet"
 
     def __str__(self):
-        return "Humans are: {} in total {} and Robots are: {} in total {} ".format(self.species["humans"], len(self.species["humans"]),self.species["robots"], len(self.species["robots"]))
+        robots = []
+        humans = []
+        h, r = 0, 0
+        for species in self.inhabitants:
+            if isinstance(species,Human):
+                humans.append(species) 
+                h += 1
+            else:
+                robots.append(species) 
+                r += 1
 
-
-class Universe():
-    
-    def __init__(self):
-        self.planets = []
-    
-    def generate(self):
-        planet = Planet()
-        for _ in range(random.randrange(1,10)):
-            planet.add_human(str(random.randrange(1,500)))
-        for _ in range(random.randrange(1,10)):
-            planet.add_robot(str(random.randrange(1,500)))
-
-        self.planets.append(planet)
-        print(self.planets[0])
-        
-    
-    def show_populations(self):
-        pass
-
-
-uni = Universe()
-uni.generate()
+        return f"Humans are: {humans} in total {h} and Robots are: {robots} in total {r}"
 
 
 """
